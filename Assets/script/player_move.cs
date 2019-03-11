@@ -70,6 +70,10 @@ public class player_move : MonoBehaviour
         {
             jump_count = 2;
         }
+        else if (col.collider.tag == "barrier")
+        {
+            jump_count = 1;
+        }
     }
     public void OnCollisionExit2D(Collision2D col)
     {
@@ -94,7 +98,7 @@ public class player_move : MonoBehaviour
         }
         else if (col.tag == "reward_speedup" && HP > 0)
         {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed_up);
+            //GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed_up);
 
         }
     }

@@ -19,6 +19,6 @@ public class MenuActions : MonoBehaviour
 
     public void GotoBehaviour()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 }

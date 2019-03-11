@@ -31,7 +31,7 @@ public class RewardControl : MonoBehaviour
             else if(transform.tag == "reward_speedup")
             {
                 
-                Main.SpeedUp(1,1);
+                Main.SpeedUp(5);
                 Main.Goal(reward);
                 AudioManager.Instance.PlaySound("eat");
                 Destroy(gameObject);

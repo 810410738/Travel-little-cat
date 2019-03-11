@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - reward
   - reward_speedup
+  - barrier
   layers:
   - Default
   - TransparentFX
