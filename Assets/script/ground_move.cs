@@ -5,7 +5,7 @@ using UnityEngine;
 public class ground_move : MonoBehaviour
 {
     public float speed = 4f;
-    public float move = 18.1f;
+    public float move = 21.32f;
     private player_move player;
     public GameObject ground;
     // Start is called before the first frame update

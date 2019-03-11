@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class player_move : MonoBehaviour
 {
-    public float move_v = 50;
     public float jump_force = 50;
-    private bool isGround = false;
     public int HP = 1;
+    public int speed_up = 1000;
     private Animator anim;
     private Rigidbody2D rigi;
+    private int jump_count = 2;//可以二段跳
     void Awake()
     {
         
@@ -29,6 +29,7 @@ public class player_move : MonoBehaviour
         
        
         Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
+        /*
         if (h > 0.05f)
         {
             velocity.x += move_v;
@@ -39,7 +40,7 @@ public class player_move : MonoBehaviour
             velocity.x -= move_v;
             GetComponent<Rigidbody2D>().velocity = velocity;
         }
-        
+        */
         //修改朝向
         if (h > 0.05f)
         {
@@ -51,9 +52,12 @@ public class player_move : MonoBehaviour
         }
 
         //跳跃
-        if (isGround&&Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && jump_count > 0)
         {
            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jump_force);
+            velocity.x += 0.1f;
+            GetComponent<Rigidbody2D>().velocity = velocity;
+            jump_count--;
             //播放音效
             AudioManager.Instance.PlaySound("eat");
         }
@@ -64,7 +68,7 @@ public class player_move : MonoBehaviour
         //碰到地面
         if (col.collider.tag == "ground")
         {
-            isGround = true;
+            jump_count = 2;
         }
     }
     public void OnCollisionExit2D(Collision2D col)
@@ -72,7 +76,7 @@ public class player_move : MonoBehaviour
         //离开地面
         if (col.collider.tag == "ground")
         {
-            isGround = false;
+            
         }
     }
 
@@ -87,6 +91,11 @@ public class player_move : MonoBehaviour
                 anim.SetBool("isDie", true);
                 Destroy(rigi);
             }
+        }
+        else if (col.tag == "reward_speedup" && HP > 0)
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed_up);
+
         }
     }
 }
