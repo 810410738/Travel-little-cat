@@ -55,7 +55,7 @@ public class player_move : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && jump_count > 0)
         {
            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jump_force);
-            velocity.x += 0.1f;
+            velocity.x += 1f;
             GetComponent<Rigidbody2D>().velocity = velocity;
             jump_count--;
             //播放音效

@@ -18,9 +18,13 @@ public class new_ground : MonoBehaviour
     }
     public void NewGround()
     {
-        //创建新地形
-        int x = Random.Range(0, grounds.Length);
-        GameObject temp =  Instantiate(grounds[x], transform);
+        //按照一定概率创建新地形
+        int[] x_random = new int[]{//用一个数组来模拟概率
+          0,0,1,2,3,4  
+        };
+                  
+        int x = Random.Range(0, x_random.Length);
+        GameObject temp = Instantiate(grounds[ x_random[x] ], transform);
         temp.transform.localPosition = new Vector3(21.28f, 0.04f, 1);
 
         

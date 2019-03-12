@@ -13,9 +13,13 @@ public class MainController : MonoBehaviour
     private float speedUpDuration = 0;
     private int level = 0;
     private float[] levelData;
+    private player_move player;
+
 
     private void Start()
     {
+        player = GameObject.FindWithTag("player").GetComponent<player_move>();
+
         //level = GameObject.Find("LevelController").GetComponent<LevelController>().GetChosenLevel();
         //levelData = LevelData.GetData(level);
     }
@@ -23,7 +27,13 @@ public class MainController : MonoBehaviour
     private void Update()
     {
         //Goal(1);
+        if (player.HP <= 0)
+        {
+            print("die");
+            return;
+        }
         TimePast();
+       
     }
 
     private void TimePast()//time always past

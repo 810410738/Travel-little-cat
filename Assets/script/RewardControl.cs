@@ -15,20 +15,20 @@ public class RewardControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "player")
        {
-            if (transform.tag == "reward")
+            if (transform.tag == "reward")//吃到普通道具
             {
-                Main.Goal(reward);
-                AudioManager.Instance.PlaySound("eat");
-                Destroy(gameObject);
+                Main.Goal(reward);//加分或减分
+                AudioManager.Instance.PlaySound("eat");//播放声效
+                Destroy(gameObject);//删除自己
             }
-            else if(transform.tag == "reward_speedup")
+            else if(transform.tag == "reward_speedup")//吃到加速道具
             {
                 
                 Main.SpeedUp(5);
