@@ -6,20 +6,15 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
 {
     private int chosenLevel = 0;
-    public void SetChooseLevel(int chosenLevel)
-    {
-        this.chosenLevel = chosenLevel;
-        EnterScene();
-    }
 
     public int GetChosenLevel()
     {
         return chosenLevel;
     }
 
-    private void EnterScene()
+    private void EnterScene(string name)
     {
         GameObject.DontDestroyOnLoad(gameObject);
-        SceneManager.LoadScene("page3");
+        SceneManager.LoadScene(name);
     }
 }

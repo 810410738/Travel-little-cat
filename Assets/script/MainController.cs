@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class MainController : MonoBehaviour
 {
     public float time = 30f;//游戏时长
-    private int goal = 0;
+    private int goal = 0;//分数
+    private int win_goal = 100;//胜利条件
     public Text scoreTextObject;
     public Text distanceObject;
     private float speedUpSubstractTime = 0;
@@ -14,8 +15,10 @@ public class MainController : MonoBehaviour
     private int level = 0;
     private float[] levelData;
     private player_move player;
-
-
+    public GameObject gameover_object;
+    public GameObject game_win_object;
+    private bool isTimeOver = false;
+    public bool isGameOver = false;
     private void Start()
     {
         player = GameObject.FindWithTag("player").GetComponent<player_move>();
@@ -26,16 +29,30 @@ public class MainController : MonoBehaviour
 
     private void Update()
     {
-        //Goal(1);
-        if (player.HP <= 0)
+        if (player.HP <= 0 || (isTimeOver == true && this.goal < this.win_goal))
         {
-            print("die");
-            return;
+            isGameOver = true;
+            GameOver();
+            this.enabled = false;//停止update方法
+        }
+        if ((isTimeOver == true && this.goal >= this.win_goal))
+        {
+            GameWin();
+            this.enabled = false;//停止update方法
         }
         TimePast();
        
     }
-
+    private void GameOver()
+    {
+        GameObject temp = Instantiate(gameover_object);
+        temp.transform.localPosition = new Vector3(0, 0, 1);
+    }
+    private void GameWin()
+    {
+        GameObject temp = Instantiate(game_win_object);
+        temp.transform.localPosition = new Vector3(0, 0, 1);
+    }
     private void TimePast()//time always past
     {
         float dt = Time.deltaTime;
@@ -59,14 +76,19 @@ public class MainController : MonoBehaviour
         distanceObject.GetComponent<Text>().text = str;
         if (time<=0)
         {
-            print("game over");
+            isTimeOver = true;
+
         }
     }
 
     public void Goal(int goalNumber)//when you get a prize, goal()  
     {
         this.goal += goalNumber;
-        scoreTextObject.GetComponent<Text>().text = "score:" + goal;
+        if (this.goal < 0)
+        {
+            this.goal = 0;
+        }
+        scoreTextObject.GetComponent<Text>().text = "score:" + this.goal;
     }
 
     public void SpeedUp(float substractTime)//when you speed up, speedUP(),第一个参数是加速效果，第二个参数是加速持续时间

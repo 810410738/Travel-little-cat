@@ -19,9 +19,9 @@ public class litter_cat_control : MonoBehaviour
         main = GameObject.FindWithTag("MainCamera").GetComponent<MainController>();
         remain_time = main.time;
         float scale = (time - remain_time) / time;
-        float distance = 5.12f;
+        float distance = 8.86f;
         Vector2 v = transform.localPosition;
-        v.x = distance * scale -2.68f;
+        v.x = distance * scale-4.39f;
         transform.localPosition = v;
     }
 }

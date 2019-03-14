@@ -6,22 +6,22 @@ public class ground_move : MonoBehaviour
 {
     public float speed = 4f;
     public float move = 21.32f;
-    private player_move player;
     public GameObject ground;
+    private MainController main;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("player").GetComponent<player_move>();
         ground = GameObject.FindWithTag("Ground");
+        main = GameObject.FindWithTag("MainCamera").GetComponent<MainController>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //如果角色死亡，地面停止运动
-        if (player.HP <= 0)
+        if (main.isGameOver==true)
         {
-            return;
+            this.enabled = false;
         }
         Vector2 v = transform.localPosition;
         v.x -= speed * Time.deltaTime;

@@ -9,7 +9,7 @@ public class player_move : MonoBehaviour
     public int speed_up = 1000;
     private Animator anim;
     private Rigidbody2D rigi;
-    private int jump_count = 2;//可以二段跳
+    private int jump_count = 1;//可以二段跳
     void Awake()
     {
         
@@ -55,8 +55,8 @@ public class player_move : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && jump_count > 0)
         {
            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jump_force);
-            velocity.x += 1f;
-            GetComponent<Rigidbody2D>().velocity = velocity;
+            //velocity.x += 1f;
+            //GetComponent<Rigidbody2D>().velocity = velocity;
             jump_count--;
             //播放音效
             AudioManager.Instance.PlaySound("eat");
