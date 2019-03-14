@@ -12,7 +12,7 @@ public class LevelController : MonoBehaviour
         return chosenLevel;
     }
 
-    private void EnterScene(string name)
+    public void EnterScene(string name)
     {
         GameObject.DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene(name);
