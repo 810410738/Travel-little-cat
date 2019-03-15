@@ -14,7 +14,7 @@ public class LevelController : MonoBehaviour
 
     public void EnterScene(string name)
     {
-        GameObject.DontDestroyOnLoad(gameObject);
+        //GameObject.DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene(name);
     }
 }

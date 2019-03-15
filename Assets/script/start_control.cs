@@ -6,6 +6,7 @@ public class start_control : MonoBehaviour
 {
     // Start is called before the first frame update
     public int speed = 10;
+    public bool isDone = false;
     void Start()
     {
         
@@ -23,7 +24,7 @@ public class start_control : MonoBehaviour
         }
         else
         {
-            this.enabled = false;
+            isDone = true;
         }
     }
 }
