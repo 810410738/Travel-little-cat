@@ -15,6 +15,7 @@ TagManager:
   - reward_add_time
   - game_over
   - super_reward
+  - ground_move
   layers:
   - Default
   - TransparentFX

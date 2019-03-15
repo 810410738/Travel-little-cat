@@ -9,7 +9,7 @@ public class player_move : MonoBehaviour
     public int speed_up = 1000;
     private Animator anim;
     private Rigidbody2D rigi;
-    private int jump_count = 1;//可以二段跳
+    private int jump_count = 1;//最大跳跃次数
     void Awake()
     {
         
@@ -73,14 +73,11 @@ public class player_move : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D col)
     {
         //碰到地面
-        if (col.collider.tag == "ground")
-        {
-            jump_count = 2;
-        }
-        else if (col.collider.tag == "barrier")
+        if (col.collider.tag == "ground"|| col.collider.tag == "barrier")
         {
             jump_count = 1;
         }
+        
     }
     public void OnCollisionExit2D(Collision2D col)
     {
