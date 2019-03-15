@@ -61,6 +61,13 @@ public class player_move : MonoBehaviour
             //播放音效
             AudioManager.Instance.PlaySound("eat");
         }
+        //判断是否死亡
+        if (HP <= 0)
+        {
+            anim.SetBool("isDie", true);
+            Destroy(rigi);
+            this.enabled = false;
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D col)
@@ -90,11 +97,6 @@ public class player_move : MonoBehaviour
         if (col.tag == "enemy"&& HP>0)
         {
             HP--;
-            if (HP <= 0)
-            {
-                anim.SetBool("isDie", true);
-                Destroy(rigi);
-            }
         }
         else if (col.tag == "reward_speedup" && HP > 0)
         {

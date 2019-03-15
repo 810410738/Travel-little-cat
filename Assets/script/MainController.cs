@@ -35,7 +35,7 @@ public class MainController : MonoBehaviour
             GameOver();
             this.enabled = false;//停止update方法
         }
-        if ((isTimeOver == true && this.goal >= this.win_goal))
+        if (this.goal >= this.win_goal)
         {
             GameWin();
             this.enabled = false;//停止update方法
@@ -94,6 +94,10 @@ public class MainController : MonoBehaviour
     public void SpeedUp(float substractTime)//when you speed up, speedUP(),第一个参数是加速效果，第二个参数是加速持续时间
     {
         speedUpSubstractTime = substractTime;
+    }
+    public void AddTime(float add_time)
+    {
+        this.time += add_time;
     }
 }
 

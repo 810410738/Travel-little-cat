@@ -12,6 +12,7 @@ TagManager:
   - reward_speedup
   - barrier
   - punish
+  - reward_add_time
   layers:
   - Default
   - TransparentFX
