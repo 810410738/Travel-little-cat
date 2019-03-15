@@ -46,9 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa534dbb1dee1a4eba17de25a427927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 7
   move: 21.32
-  ground: {fileID: 0}
 --- !u!1001 &4682628011059038230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,11 +125,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.90302
       objectReference: {fileID: 0}
-    - target: {fileID: 6705061360287077730, guid: d35067be9ebdc9346bba9b2aa8ccd9c4,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1283096313081289708, guid: d35067be9ebdc9346bba9b2aa8ccd9c4,
         type: 3}
       propertyPath: m_Offset.y
@@ -140,6 +134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.6209974
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705061360287077730, guid: d35067be9ebdc9346bba9b2aa8ccd9c4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d35067be9ebdc9346bba9b2aa8ccd9c4, type: 3}

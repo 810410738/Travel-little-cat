@@ -6,7 +6,7 @@ public class ground_move : MonoBehaviour
 {
     public float speed = 4f;
     public float move = 21.32f;
-    public GameObject ground;
+    private GameObject ground;
     private MainController main;
     // Start is called before the first frame update
     void Start()
