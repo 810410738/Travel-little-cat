@@ -13,6 +13,8 @@ TagManager:
   - barrier
   - punish
   - reward_add_time
+  - game_over
+  - super_reward
   layers:
   - Default
   - TransparentFX
