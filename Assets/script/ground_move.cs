@@ -35,4 +35,19 @@ public class ground_move : MonoBehaviour
         }
         transform.localPosition = v;
     }
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+    public float GetSpeed()
+    {
+        return this.speed;
+    }
+    public void SpeedUp(float speedup)
+    {
+        for (float m_time = 0; m_time < 1; m_time += Time.deltaTime) //加速持续一段时间
+        {
+            Debug.LogWarning("m_time is:" + m_time);
+        }
+    }
 }

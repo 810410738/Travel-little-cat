@@ -54,12 +54,11 @@ public class player_move : MonoBehaviour
         //跳跃
         if (Input.GetKeyDown(KeyCode.Space) && jump_count > 0)
         {
-           GetComponent<Rigidbody2D>().AddForce(Vector2.up * jump_force);
-            //velocity.x += 1f;
-            //GetComponent<Rigidbody2D>().velocity = velocity;
+           
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jump_force);
             jump_count--;
             //播放音效
-            AudioManager.Instance.PlaySound("eat");
+            //AudioManager.Instance.PlaySound("eat");
         }
         //判断是否死亡
         if (HP <= 0)
@@ -94,11 +93,6 @@ public class player_move : MonoBehaviour
         if (col.tag == "enemy"&& HP>0)
         {
             HP--;
-        }
-        else if (col.tag == "reward_speedup" && HP > 0)
-        {
-            //GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed_up);
-
         }
     }
 }

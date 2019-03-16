@@ -5,7 +5,7 @@ using UnityEngine;
 public class start_control : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int speed = 10;
+    public int speed = 15;
     public bool isDone = false;
     void Start()
     {
