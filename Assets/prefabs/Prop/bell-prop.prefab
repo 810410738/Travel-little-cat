@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4586627461337273297}
   - component: {fileID: 4680134836951921597}
   - component: {fileID: 8725271959957770768}
+  - component: {fileID: 3633311646803443518}
   m_Layer: 0
   m_Name: bell-prop
-  m_TagString: super_reward
+  m_TagString: reward_speedup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,3 +122,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.79221153, y: 0.5994582}
   m_EdgeRadius: 0
+--- !u!114 &3633311646803443518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7635687674098744696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda4bd9cb73cf204599a9880219adbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: 0
+  add_time: 0

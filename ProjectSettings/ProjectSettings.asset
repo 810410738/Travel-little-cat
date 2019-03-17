@@ -513,7 +513,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Template_2D
   metroPackageVersion: 
-  metroCertificatePath: C:\Users\LiangZhenjie\Documents\Cat_Parkour\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: XiaoHuiDan
   metroCertificateIssuer: XiaoHuiDan
