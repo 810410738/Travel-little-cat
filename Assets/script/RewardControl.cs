@@ -45,6 +45,11 @@ public class RewardControl : MonoBehaviour
                 AudioManager.Instance.PlaySound("reward");//播放声效
                 Destroy(gameObject);//删除自己   
             }
+            else if(transform.tag == "reward_punish")//吃到扣分道具
+            {
+                AudioManager.Instance.PlaySound("reward");//播放声效
+                Destroy(gameObject);//删除自己   
+            }
             else if(transform.tag == "reward_add_time")//吃到加时道具
             {
                 Main.AddTime(add_time);

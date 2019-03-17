@@ -16,6 +16,7 @@ TagManager:
   - game_over
   - super_reward
   - ground_move
+  - reward_punish
   layers:
   - Default
   - TransparentFX
