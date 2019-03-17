@@ -17,4 +17,9 @@ public class LevelController : MonoBehaviour
         //GameObject.DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene(name);
     }
+    public void ExitGame()
+    {
+        Debug.LogWarning("sdfsd");
+        Application.Quit();
+    }
 }

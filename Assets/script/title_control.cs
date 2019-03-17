@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class title_control : MonoBehaviour
 {
-    private float alphaSpeed = 0.5f;
+    private float alphaSpeed = 1f;
     private CanvasGroup canvas;
     // Start is called before the first frame update
     void Start()

@@ -10,6 +10,8 @@ public class player_move : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rigi;
     private int jump_count = 1;//最大跳跃次数
+    private bool isAddTime = false;
+    private float m_time = 0;
     void Awake()
     {
         
@@ -19,6 +21,12 @@ public class player_move : MonoBehaviour
     {
         anim = this.GetComponent<Animator>();
         rigi = this.GetComponent<Rigidbody2D>();
+        //设置所有子物体都隐藏，即隐藏分数显示
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0f);//color里面的取值范围为0-1，对应实际RGB的0-255
+            Debug.LogWarning(transform.GetChild(i).gameObject.name);
+        }
     }
 
     // Update is called once per frame
@@ -42,6 +50,7 @@ public class player_move : MonoBehaviour
         }
         */
         //修改朝向
+        /*
         if (h > 0.05f)
         {
             transform.localScale = new Vector3(0.1415232f, 0.1381166f, 1);
@@ -50,9 +59,9 @@ public class player_move : MonoBehaviour
         {
             transform.localScale = new Vector3(-0.1415232f, 0.1381166f, 1);
         }
-
+        */
         //跳跃
-        if (Input.GetKeyDown(KeyCode.Space) && jump_count > 0)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(0) ) && jump_count > 0 )
         {
            
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jump_force);
@@ -67,6 +76,60 @@ public class player_move : MonoBehaviour
             Destroy(rigi);
             this.enabled = false;
         }
+        if (isAddTime)
+        {
+            //有三个子物体，0是最下面的
+            m_time += Time.deltaTime;
+            if (m_time > 0f && m_time < 0.3f)
+            {
+                transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, (50 / 255f));//color里面的取值范围为0-1，对应实际RGB的0-255}
+            }
+            else if (m_time > 0.3f && m_time < 0.6f)
+            {
+                transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, (150 / 255f));
+            }
+            else if (m_time > 0.6f && m_time < 0.9f)
+            {
+                transform.GetChild(2).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, (255 / 255f));
+
+            }
+            else if (m_time > 1f)
+            {
+                //消失第一个
+                float color1 = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color.a;
+                color1 -=0.5f * Time.deltaTime;
+                if(color1 < 0)
+                {
+                    color1 = 0;
+                }
+                transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, color1);
+                //
+                //消失第二个
+                float color2 = transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color.a;
+                color2 -= 0.5f * Time.deltaTime;
+                if (color2 < 0)
+                {
+                    color2 = 0;
+                }
+                transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, color2);
+                //
+                //消失第三个
+                float color3 = transform.GetChild(2).gameObject.GetComponent<SpriteRenderer>().color.a;
+                color3 -= 0.5f * Time.deltaTime;
+                if (color3 < 0)
+                {
+                    color3 = 0;
+                }
+                transform.GetChild(2).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, color3);
+                //
+                if (color1 <= 0 && color2 <= 0 && color3 <= 0)
+                {
+                    m_time = 0;
+                    isAddTime = false;
+                }
+            }   
+        }
+       
     }
 
     public void OnCollisionEnter2D(Collision2D col)
@@ -93,6 +156,10 @@ public class player_move : MonoBehaviour
         if (col.tag == "enemy"&& HP>0)
         {
             HP--;
+        }
+        if (col.tag == "reward_add_time")//吃到加时道具，显示加时UI
+        {
+            isAddTime = true;
         }
     }
 }
