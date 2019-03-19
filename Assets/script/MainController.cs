@@ -22,7 +22,7 @@ public class MainController : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindWithTag("player").GetComponent<player_move>();
-
+        Time.timeScale = 1;
         //level = GameObject.Find("LevelController").GetComponent<LevelController>().GetChosenLevel();
         //levelData = LevelData.GetData(level);
     }

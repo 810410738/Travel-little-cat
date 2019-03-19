@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class punish_title_control : MonoBehaviour
 {
-	public float alphaSpeed = 0.2f;
+	public float alphaSpeed = 1f;
 	public bool isShow = false;
 	private CanvasGroup canvas;
 	// Start is called before the first frame update
@@ -20,7 +20,7 @@ public class punish_title_control : MonoBehaviour
 		if (isShow)
 		{
 			canvas.alpha = Mathf.Lerp(canvas.alpha, 0, alphaSpeed * Time.deltaTime);
-			if (canvas.alpha <= 0.1f)
+			if (canvas.alpha <= 0f)
 			{
 				isShow = false;
 			}

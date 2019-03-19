@@ -20,7 +20,11 @@ public class reward_title_control : MonoBehaviour
 		if (isShow)
 		{
 			canvas.alpha = Mathf.Lerp(canvas.alpha, 0, alphaSpeed * Time.deltaTime);
-		}
+            if (canvas.alpha <= 0f)
+            {
+                isShow = false;
+            }
+        }
 	}
 	public void show()
 	{
