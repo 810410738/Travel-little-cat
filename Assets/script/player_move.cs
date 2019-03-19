@@ -63,6 +63,10 @@ public class player_move : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(0) ) && jump_count > 0 )
         {     
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jump_force);
+            if (transform.position.x <= 0)
+            {
+                GetComponent<Rigidbody2D>().AddForce(Vector2.right * 100);
+            }
             jump_count--;
             //播放音效
             //AudioManager.Instance.PlaySound("eat");
