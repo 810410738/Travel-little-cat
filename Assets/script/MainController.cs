@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MainController : MonoBehaviour
 {
-    public float time = 30f;//游戏时长
+    public float time = 60f;//游戏时长
     private int goal = 0;//分数
-    private int win_goal = 700;//胜利条件
+    private int win_goal = 5000;//胜利条件
     public Text scoreTextObject;
     public Text distanceObject;
     private float speedUpSubstractTime = 0;
@@ -87,7 +87,7 @@ public class MainController : MonoBehaviour
         {
             this.goal = 0;
         }
-        scoreTextObject.GetComponent<Text>().text = "score:" + this.goal;
+        scoreTextObject.GetComponent<Text>().text = "得分:" + this.goal;
     }
 
     public void SpeedUp(float substractTime)//when you speed up, speedUP(),第一个参数是加速效果，第二个参数是加速持续时间
@@ -97,6 +97,10 @@ public class MainController : MonoBehaviour
     public void AddTime(float add_time)
     {
         this.time += add_time;
+		if (this.time > 60f)//不能超过60s
+		{
+			this.time = 60f;
+		}
     }
 }
 

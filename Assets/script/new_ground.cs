@@ -21,7 +21,7 @@ public class new_ground : MonoBehaviour
     {
         //按照一定概率创建新地形
         int[] x_random = new int[]{//用一个数组来模拟概率
-          0,1,2,3,4,1,1,1,1,1  
+          0,1,2,3,4
         };
         if (this.flag == 0)//随机生成
         {

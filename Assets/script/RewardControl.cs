@@ -12,22 +12,28 @@ public class RewardControl : MonoBehaviour
     private float speedup = 20f;
     private bool isSpeed = false;
     private float m_time = 0;
+	private reward_title_control reward_title;
+	private punish_title_control punish_title;
     // Start is called before the first frame update
     void Start()
     {
         Main = GameObject.FindWithTag("MainCamera").GetComponent<MainController>();
         ground = GameObject.Find("Ground").GetComponent<new_ground>();
         g_move = GameObject.FindWithTag("ground_move").GetComponent<ground_move>();
+		reward_title = GameObject.Find("reward_title").GetComponent<reward_title_control>();
+		punish_title = GameObject.Find("punish_title").GetComponent<punish_title_control>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isSpeed)
+		Debug.LogWarning("isspeed:  " + isSpeed);
+		if (isSpeed)
         {
             Time.timeScale = 2.5f;//加速
             m_time += Time.deltaTime;
-            if (m_time > 2.5f)
+			Debug.LogWarning("time is " + m_time);
+            if (m_time > 1f)
             {
                 Time.timeScale = 1;//恢复原来的速度
                 Destroy(gameObject);//删除自己  
@@ -56,21 +62,20 @@ public class RewardControl : MonoBehaviour
                 AudioManager.Instance.PlaySound("eat");
                 Destroy(gameObject);//删除自己   
             }
-            else if (transform.tag == "reward_speedup")//吃到加速道具
+            else if(transform.tag == "super_reward")//超级奖励，加速
             {
-                Debug.LogWarning("speedup");
-                AudioManager.Instance.PlaySound("speedup");
-                isSpeed = true;
-                this.transform.localScale = Vector3.zero;
-            }
-            else if(transform.tag == "super_reward")//超级奖励
-            {
+				//显示奖励模式UI
+				reward_title.show();
                 ground.flag = 1;
                 AudioManager.Instance.PlaySound("super_reward");
-                Destroy(gameObject);//删除自己   
-            }
+				isSpeed = true;
+				Debug.LogWarning("isspeed:  " + isSpeed);
+				this.transform.localScale = Vector3.zero;
+			}
             else if(transform.tag == "punish")//惩罚模式
             {
+				//显示惩罚模式UI
+				punish_title.show();
                 ground.flag = 2;
                 AudioManager.Instance.PlaySound("eat");
                 Destroy(gameObject);//删除自己   

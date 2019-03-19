@@ -19,7 +19,6 @@ public class LevelController : MonoBehaviour
     }
     public void ExitGame()
     {
-        Debug.LogWarning("sdfsd");
         Application.Quit();
     }
 }
