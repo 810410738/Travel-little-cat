@@ -10,7 +10,6 @@ public class RewardControl : MonoBehaviour
     private new_ground ground;
     private ground_move g_move;
     private float speedup = 20f;
-    private bool isSpeed = false;
     private float m_time = 0;
 	private reward_title_control reward_title;
 	private punish_title_control punish_title;
@@ -24,22 +23,6 @@ public class RewardControl : MonoBehaviour
 		punish_title = GameObject.Find("punish_title").GetComponent<punish_title_control>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-		Debug.LogWarning("isspeed:  " + isSpeed);
-		if (isSpeed)
-        {
-            Time.timeScale = 2.5f;//加速
-            m_time += Time.deltaTime;
-			Debug.LogWarning("time is " + m_time);
-            if (m_time > 1f)
-            {
-                Time.timeScale = 1;//恢复原来的速度
-                Destroy(gameObject);//删除自己  
-            }  
-        }
-    }
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -68,8 +51,6 @@ public class RewardControl : MonoBehaviour
 				reward_title.show();
                 ground.flag = 1;
                 AudioManager.Instance.PlaySound("super_reward");
-				isSpeed = true;
-				Debug.LogWarning("isspeed:  " + isSpeed);
 				this.transform.localScale = Vector3.zero;
 			}
             else if(transform.tag == "punish")//惩罚模式

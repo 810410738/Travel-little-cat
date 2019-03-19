@@ -13,6 +13,7 @@ public class player_move : MonoBehaviour
     private bool isAddTime = false;
     private float m_time = 0;
     private bool isRewardPunish = false;
+    private bool isSpeed = false;//判断是否加速
     void Awake()
     {
         
@@ -96,6 +97,18 @@ public class player_move : MonoBehaviour
             //显示三个扣分的UI
             ShowRewardPunishUI();
         }
+        if (isSpeed)//加速效果
+        {
+            Debug.LogWarning("speed up in if!");
+            Time.timeScale = 2.5f;//加速
+            m_time += Time.deltaTime;
+            Debug.LogWarning("time is " + m_time);
+            if (m_time > 3f)
+            {
+                Time.timeScale = 1;//恢复原来的速度
+                isSpeed = false;
+            }
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D col)
@@ -130,6 +143,12 @@ public class player_move : MonoBehaviour
         else if(col.tag== "reward_punish")//吃到扣分道具，显示加时UI
         {
             isRewardPunish = true;
+        }
+        else if (col.tag == "super_reward")//超级奖励，加速
+        {
+            isSpeed = true;
+            Debug.LogWarning("speed up !");
+
         }
     }
 
