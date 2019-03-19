@@ -72,7 +72,6 @@ public class MainController : MonoBehaviour
         //float formatTime = (int)((30 - time) / 30 * 10000) / 100.0f;
         float formatTime = (int)(time * 10) / 10f;
         string str = "剩余"+formatTime+"秒";
-        print(str);
         distanceObject.GetComponent<Text>().text = str;
         if (time<=0)
         {

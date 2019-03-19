@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3633311646803443518}
   m_Layer: 0
   m_Name: bell-prop
-  m_TagString: reward_speedup
+  m_TagString: super_reward
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

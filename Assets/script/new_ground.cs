@@ -21,23 +21,23 @@ public class new_ground : MonoBehaviour
     {
         //按照一定概率创建新地形
         int[] x_random = new int[]{//用一个数组来模拟概率
-          0,0,1,2,3,4  
+          0,1,2,3,4,1,1,1,1,1  
         };
         if (this.flag == 0)//随机生成
         {
-            int x = Random.Range(0, x_random.Length-2);
+            int x = Random.Range(0, x_random.Length);
             Instantiate(grounds[x_random[x]], transform).transform.localPosition = new Vector3(21.28f, 0.04f, 1f);
         }
         else if (this.flag == 1)//奖励地形
         {
             //grouns数组倒数第二个为奖励地形
-            Instantiate(grounds[x_random[x_random.Length-2]], transform).transform.localPosition = new Vector3(21.28f, 0.04f, 1f);
+            Instantiate(grounds[grounds.Length-2], transform).transform.localPosition = new Vector3(21.28f, 0.04f, 1f);
             flag = 0;//恢复为随机生成
         }
         else if (this.flag == 2)//惩罚地形
         {
             //grouns数组倒数第一个为奖励地形
-            Instantiate(grounds[x_random[x_random.Length - 1]], transform).transform.localPosition = new Vector3(21.28f, 0.04f, 1f);
+            Instantiate(grounds[grounds.Length - 1], transform).transform.localPosition = new Vector3(21.28f, 0.04f, 1f);
             flag = 0;//恢复为随机生成
         }
     }
