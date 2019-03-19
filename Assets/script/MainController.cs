@@ -7,7 +7,7 @@ public class MainController : MonoBehaviour
 {
     public float time = 60f;//游戏时长
     private int goal = 0;//分数
-    private int win_goal = 5000;//胜利条件
+    private int win_goal = 1000;//胜利条件
     public Text scoreTextObject;
     public Text distanceObject;
     private float speedUpSubstractTime = 0;

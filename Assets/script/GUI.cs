@@ -31,15 +31,15 @@ public class GUI : MonoBehaviour
         {
             m_time += Time.deltaTime;
             introduct.alpha = Mathf.Lerp(introduct.alpha, 1, alphaSpeed * Time.deltaTime); 
-            if (m_time > 0.3f&&m_time<0.6f)
+            if (m_time > 0.3f)
             {
                 operate.alpha = Mathf.Lerp(operate.alpha, 1, alphaSpeed * Time.deltaTime);
             }
-           else if (m_time > 0.6f)
+           if (m_time > 0.6f)
            {
                 begin.alpha = Mathf.Lerp(begin.alpha, 1, alphaSpeed * Time.deltaTime);
            }
-           else if(m_time>2f)
+           if(m_time>2f)
             {
                 this.enabled = false;
             }
