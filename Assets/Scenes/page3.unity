@@ -240,7 +240,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e3a46e7567f44c645a608ff12bd93a67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f687cbccc01c909499dcb3270a1d66d6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -690,75 +690,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1594205499}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &351486649
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1371449379}
-    m_Modifications:
-    - target: {fileID: 7635687674098744696, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_Name
-      value: bell-prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -39.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401505701072533763, guid: 0a039d5c68c837c4cb178f73e987c189,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0a039d5c68c837c4cb178f73e987c189, type: 3}
 --- !u!1 &365944127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +944,9 @@ MonoBehaviour:
   - {fileID: 9034496798175572236, guid: efa20dc910c8d3e47a1b560e1c7b4376, type: 3}
   - {fileID: 2987945886867953931, guid: 85f29fe1c1cafa94abcc809abf173c36, type: 3}
   - {fileID: 818168660260844952, guid: 3a9480ad5bbe6ad41b7e512e0e1be777, type: 3}
+  - {fileID: 5530834176902112008, guid: 100a28299765c724896e2252040a4924, type: 3}
+  - {fileID: 1240235708540022249, guid: a3844d1e855050449b6259167e1e520b, type: 3}
+  - {fileID: 908209966841390664, guid: 7f4b0d1df201c344199fb8589a90d317, type: 3}
   - {fileID: 7741912140974394475, guid: 6e88ceb925bd8dc45ba30c57846ad05f, type: 3}
   - {fileID: 8375338918058238795, guid: 26511bcf5d0047841aff56a6b965d286, type: 3}
   flag: 0

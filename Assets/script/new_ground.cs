@@ -20,8 +20,8 @@ public class new_ground : MonoBehaviour
     public void NewGround()
     {
         //按照一定概率创建新地形
-        int[] x_random = new int[]{//用一个数组来模拟概率
-          0,1,2,3,4
+        int[] x_random = new int[]{//用一个数组来模拟概率1，5，6，7，8
+         0,0,4,4,5,5,6,6,6,7,7,7,1,2,3
         };
         if (this.flag == 0)//随机生成
         {
@@ -36,7 +36,7 @@ public class new_ground : MonoBehaviour
         }
         else if (this.flag == 2)//惩罚地形
         {
-            //grouns数组倒数第一个为奖励地形
+            //grouns数组倒数第一个为惩罚地形
             Instantiate(grounds[grounds.Length - 1], transform).transform.localPosition = new Vector3(21.28f, 0.04f, 1f);
             flag = 0;//恢复为随机生成
         }

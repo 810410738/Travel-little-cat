@@ -12,6 +12,8 @@ public class player_move : MonoBehaviour
     private int jump_count = 1;//最大跳跃次数
     private bool isAddTime = false;
     private float m_time = 0;
+    private float m_time_1 = 0;
+    private float m_time_2 = 0;
     private bool isRewardPunish = false;
     private bool isSpeed = false;//判断是否加速
     void Awake()
@@ -79,25 +81,13 @@ public class player_move : MonoBehaviour
             this.enabled = false;
         }
         if (isAddTime)//显示加时UI
-        {
-            //isRewardPunish = false;
-            //首先隐藏三个扣分的UI
-            for (int i = 3; i < 6; i++)
-            {
-                transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-            }
+        {   
             //显示三个加时的UI
             ShowAddTimeUI();   
         }
 
         if (isRewardPunish)//显示扣分UI
         {
-            //isAddTime = false;
-            //首先隐藏三个加时的UI
-            for (int i = 0; i < 3; i++)
-            {
-                transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-            }
             //显示三个扣分的UI
             ShowRewardPunishUI();
         }
@@ -107,7 +97,7 @@ public class player_move : MonoBehaviour
             Time.timeScale = 2.5f;//加速
             m_time += Time.deltaTime;
             Debug.LogWarning("time is " + m_time);
-            if (m_time > 3f)
+            if (m_time > 4f)
             {
                 Time.timeScale = 1;//恢复原来的速度
                 isSpeed = false;
@@ -148,7 +138,7 @@ public class player_move : MonoBehaviour
         {
             isRewardPunish = true;
         }
-        else if (col.tag == "super_reward")//超级奖励，加速
+        else if (col.tag == "super_reward"||col.tag=="punish")//加速
         {
             isSpeed = true;
             Debug.LogWarning("speed up !");
@@ -159,20 +149,20 @@ public class player_move : MonoBehaviour
     private void ShowAddTimeUI()
     {
         //有三个子物体，0是最下面的
-        m_time += Time.deltaTime;
-        if (m_time > 0f && m_time < 0.3f)
+        m_time_1 += Time.deltaTime;
+        if (m_time_1 > 0f && m_time_1 < 0.3f)
         {
             transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, (50 / 255f));//color里面的取值范围为0-1，对应实际RGB的0-255}
         }
-        else if (m_time > 0.3f && m_time < 0.6f)
+        else if (m_time_1 > 0.3f && m_time_1 < 0.6f)
         {
             transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, (150 / 255f));
         }
-        else if (m_time > 0.6f && m_time < 0.9f)
+        else if (m_time_1 > 0.6f && m_time_1 < 0.9f)
         {
             transform.GetChild(2).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, (255 / 255f));
         }
-        else if (m_time > 1f)
+        else if (m_time_1 > 1f)
         {
             //消失第一个
             float color1 = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color.a;
@@ -203,7 +193,7 @@ public class player_move : MonoBehaviour
             //
             if (color1 <= 0 && color2 <= 0 && color3 <= 0)
             {
-                m_time = 0;
+                m_time_1 = 0;
                 isAddTime = false;
             }
         }
@@ -212,21 +202,21 @@ public class player_move : MonoBehaviour
     private void ShowRewardPunishUI()
     {
         //有三个子物体，0是最下面的
-        m_time += Time.deltaTime;
-        if (m_time > 0f && m_time < 0.3f)
+        m_time_2 += Time.deltaTime;
+        if (m_time_2 > 0f && m_time_2 < 0.3f)
         {
             transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, (50 / 255f));//color里面的取值范围为0-1，对应实际RGB的0-255}
         }
-        else if (m_time > 0.3f && m_time < 0.6f)
+        else if (m_time_2 > 0.3f && m_time_2 < 0.6f)
         {
             transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, (150 / 255f));
         }
-        else if (m_time > 0.6f && m_time < 0.9f)
+        else if (m_time_2 > 0.6f && m_time_2 < 0.9f)
         {
             transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, (255 / 255f));
 
         }
-        else if (m_time > 1f)
+        else if (m_time_2 > 1f)
         {
             //消失第一个
             float color1 = transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>().color.a;
@@ -257,7 +247,7 @@ public class player_move : MonoBehaviour
             //
             if (color1 <= 0 && color2 <= 0 && color3 <= 0)
             {
-                m_time = 0;
+                m_time_2 = 0;
                 isRewardPunish = false;
             }
         }
