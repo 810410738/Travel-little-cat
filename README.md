@@ -45,3 +45,9 @@
 失败时，游戏画面黑暗，游戏停止运行
 
 ![](https://github.com/milkmilkrabbit/Travel-little-cat/blob/master/Assets/image/%E6%93%8D%E4%BD%9C%E6%8F%90%E7%A4%BA/gameover1.png)
+
+3.游戏运行环境  
+开发语言：c#  
+Unity版本： 2018.3.3f1  
+VS2017  
+支持平台：Windows  
