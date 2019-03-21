@@ -10,25 +10,25 @@
 
 （1） 进入游戏界面
 
-![](http://www.bejson.com/ueditor/themes/default/images/spacer.gif)
+![](https://github.com/milkmilkrabbit/Travel-little-cat/blob/master/Assets/image/%E8%83%8C%E6%99%AF/background.png)
 
 （2） 游戏开始界面
 
-![](http://www.bejson.com/ueditor/themes/default/images/spacer.gif)
+![](https://github.com/milkmilkrabbit/Travel-little-cat/blob/master/Assets/image/%E6%93%8D%E4%BD%9C%E6%8F%90%E7%A4%BA/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%A7%8B%E5%BD%A9%E5%B8%A6%E6%95%88%E6%9E%9C%E5%9B%BE.png)
 
 （3） 道具介绍
 
-![](http://www.bejson.com/ueditor/themes/default/images/spacer.gif)
+![](https://github.com/milkmilkrabbit/Travel-little-cat/blob/master/Assets/image/%E6%93%8D%E4%BD%9C%E6%8F%90%E7%A4%BA/%E9%81%93%E5%85%B7%E6%95%88%E6%9E%9C%E5%9B%BE.png)
 
 （4） 操作方法
 
-![](http://www.bejson.com/ueditor/themes/default/images/spacer.gif)
+![](https://github.com/milkmilkrabbit/Travel-little-cat/blob/master/Assets/image/%E6%93%8D%E4%BD%9C%E6%8F%90%E7%A4%BA/operation.png)
 
 （5） 游戏开始：游戏任务：限定60秒内获得1000积分，在时间有限的旅程中获得最大的收获。
 
-![](http://www.bejson.com/ueditor/themes/default/images/spacer.gif)
+![](https://github.com/milkmilkrabbit/Travel-little-cat/blob/master/Assets/image/%E5%AD%97%E4%BD%93/yunnan1.png)
 
-![](http://www.bejson.com/ueditor/themes/default/images/spacer.gif)
+![](https://github.com/milkmilkrabbit/Travel-little-cat/blob/master/Assets/image/%E6%93%8D%E4%BD%9C%E6%8F%90%E7%A4%BA/%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%95%88%E6%9E%9C%E5%9B%BE.png)
 
 （6） 特殊模式
 
@@ -40,8 +40,8 @@
 
 胜利时，游戏继续运行，玩家仍然可以操作人物
 
-![](http://www.bejson.com/ueditor/themes/default/images/spacer.gif)
+![](https://github.com/milkmilkrabbit/Travel-little-cat/blob/master/Assets/image/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3/win.png)
 
 失败时，游戏画面黑暗，游戏停止运行
 
-![](http://www.bejson.com/ueditor/themes/default/images/spacer.gif)
+![](https://github.com/milkmilkrabbit/Travel-little-cat/blob/master/Assets/image/%E6%93%8D%E4%BD%9C%E6%8F%90%E7%A4%BA/gameover1.png)
